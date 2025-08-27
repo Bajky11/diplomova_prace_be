@@ -1,0 +1,8 @@
+package com.friends.friends.Exception.Account;
+
+
+public class AccountAlreadyExistsException extends RuntimeException {
+    public AccountAlreadyExistsException(String message) {
+        super(message);
+    }
+}

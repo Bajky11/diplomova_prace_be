@@ -1,0 +1,61 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/hotSpot_db
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5        # max. 5 současných spojení
+      minimum-idle: 1             # drž jen 1 nečinné spojení
+      idle-timeout: 15000         # 15s nečinnosti = zavři spojení
+      max-lifetime: 60000         # max životnost spojení 60s
+      connection-timeout: 3000    # 3s timeout při čekání na spojení
+
+  flyway:
+    enabled: false
+    locations: classpath:db/migration
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+jwt:
+  secret: ${JWT_SECRET:changeme}
+  expiration: 86400000  # 24 hours in milliseconds
+  reset:
+    secret: ${JWT_SECRET_RESET:changeme}
+    ttl-minutes: 10
+
+server:
+  port: 8081
+  servlet:
+    context-path: /hotSpot
+
+mapbox:
+  api:
+    url: https://api.mapbox.com/search/searchbox/v1
+    access:
+      accessToken: ${MAPBOX_ACCESS_TOKEN:changeme}
+      sessionToken: ${MAPBOX_SESSION_TOKEN:changeme}
+
+cloudflare:
+  images:
+    account-id: ${CLOUDFLARE_ACCOUNT_ID:changeme}
+    api-token: ${CLOUDFLARE_API_TOKEN:changeme}
+
+brevo:
+  apiKey: ${BREVO_API_KEY:changeme}
+  sender:
+    email: lukin.bajer@gmail.com
+    name: "Hotspot App"

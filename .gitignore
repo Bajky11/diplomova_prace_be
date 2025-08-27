@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Copilot nebo jiné dočasné soubory
+copilot_context.txt
+.env
+application.yml
+hotspot-ed94b-firebase-adminsdk-fbsvc-98fb6eba84.json
