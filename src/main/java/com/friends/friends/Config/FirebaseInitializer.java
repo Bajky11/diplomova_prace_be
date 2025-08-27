@@ -13,7 +13,7 @@ import java.io.InputStream;
 public class FirebaseInitializer {
     @PostConstruct
     public void init() {
-        try (InputStream serviceAccount = getClass().getClassLoader().getResourceAsStream("firebase/hotspot-ed94b-firebase-adminsdk-fbsvc-98fb6eba84.json")) {
+        try (InputStream serviceAccount = getClass().getClassLoader().getResourceAsStream("firebase/firebase-adminsdk.json")) {
 
             FirebaseOptions options = FirebaseOptions.builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).build();
 
