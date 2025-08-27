@@ -69,6 +69,10 @@ public class AccountService {
             user.setPasswordHash(passwordEncoder.encode(updateDto.getPassword()));
         }
 
+        if(updateDto.getRegion() != null) {
+            user.setRegion(updateDto.getRegion());
+        }
+
         Account savedUser = accountRepository.save(user);
         return savedUser.toDto();
     }

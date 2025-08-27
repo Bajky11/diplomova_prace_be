@@ -15,6 +15,8 @@ public class AccountUpdateDto {
     private String name;
     
     private String imageUrl;
+
+    private String region;
     
     @Size(min = 6, message = "Heslo musí mít alespoň 6 znaků")
     private String password;
