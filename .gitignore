@@ -13,4 +13,4 @@ target/
 copilot_context.txt
 .env
 application.yml
-hotspot-ed94b-firebase-adminsdk-fbsvc-98fb6eba84.json
+firebase-adminsdk.json

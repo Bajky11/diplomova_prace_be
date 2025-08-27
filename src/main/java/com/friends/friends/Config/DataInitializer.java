@@ -38,6 +38,14 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        if(categoryRepository.findById(1L).isEmpty()){
+            initializeCategories();
+        }
+
+        if(currencyRepository.findById(1L).isEmpty()){
+            initializeCurrencies();
+        }
         /*
 
 
